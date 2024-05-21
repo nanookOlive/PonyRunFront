@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class ApiService {
 
   //url de l'api
-  private url : string = "http://localhost:8080/sortie/find/3"; 
+  private url : string = "http://localhost:8080/sortie/find/4"; 
 
   //injection
   constructor(private client : HttpClient) {}

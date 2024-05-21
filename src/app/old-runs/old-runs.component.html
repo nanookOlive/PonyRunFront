@@ -1,3 +1,23 @@
 <div *ngIf='data'>
-    <pre>{{data.id|json}}</pre>
-    <div>
+    <table class ='table'>
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Date</th>
+                <th scope="col">Distance</th>
+                <th scope="col">Durée</th>
+                <th scope="col">Avis</th>
+            </tr>
+        </thead>
+        <tbody>
+            <th scope="row">{{data.id}}</th>
+            <th scope="row">{{data.date}}</th>
+            <th scope="row">{{data.nbKilometres}}</th>
+            <th scope="row">{{data.duree}}</th>
+            <th scope="row">{{data.avis}}</th>
+
+
+        </tbody>
+    </table>
+<div>
+

@@ -1,5 +1,5 @@
 import { Component,OnInit } from '@angular/core';
-//import {ApiService} from './api.service.ts';
+import {ApiService} from '../api.service';
 
 @Component({
   selector: 'app-old-runs',
@@ -8,9 +8,21 @@ import { Component,OnInit } from '@angular/core';
 })
 export class OldRunsComponent implements OnInit {
 
- constructor(){}
+  //le resultat de la recherche
+  data :any;
+
+ constructor(private apiService : ApiService){}
 
  ngOnInit(){
+
+  this.apiService.getOuting().subscribe(
+    (response)=>{
+      this.data = response;
+    },
+    (error)=>{
+      console.error('Error');
+    }
+  );
  
  }
 }

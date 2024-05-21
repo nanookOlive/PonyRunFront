@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { OldRunsComponent } from './old-runs/old-runs.component';
 import { NewRunComponent } from './new-run/new-run.component';
 import {ApiService} from './api.service';
+import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,6 +16,7 @@ import {ApiService} from './api.service';
     HeaderComponent,
     OldRunsComponent,
     NewRunComponent,
+    FooterComponent,
    
     
   ],

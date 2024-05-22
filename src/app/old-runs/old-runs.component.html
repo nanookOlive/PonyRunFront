@@ -1,4 +1,4 @@
-<div *ngIf='data'>
+<div *ngIf='outings'>
     <table class ='table'>
         <thead>
             <tr>
@@ -9,13 +9,15 @@
                 <th scope="col">Avis</th>
             </tr>
         </thead>
-        <tbody>
-            <th scope="row">{{data.id}}</th>
-            <td scope="row">{{data.date}}</td>
-            <td scope="row">{{data.nbKilometres}} kilometres</td>
-            <td scope="row">{{data.duree}} minutes</td>
-            <td scope="row">{{data.avis}}</td>
 
+        <tbody *ngFor="let key of getKeys(outings)" >
+            <tr>
+            <th scope="row">{{outings[key].id}}</th>
+            <td scope="row">{{outings[key].date}}</td>
+            <td scope="row">{{outings[key].nbKilometres}} kilometres</td>
+            <td scope="row">{{outings[key].duree}} minutes</td>
+            <td scope="row">{{outings[key].avis}}</td>
+            </tr>
 
         </tbody>
     </table>

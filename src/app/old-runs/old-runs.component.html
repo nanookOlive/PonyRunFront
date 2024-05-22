@@ -7,6 +7,7 @@
                 <th scope="col">Distance</th>
                 <th scope="col">Durée</th>
                 <th scope="col">Avis</th>
+                <th scope="col">Supp</th>
             </tr>
         </thead>
 
@@ -17,6 +18,7 @@
             <td scope="row">{{outings[key].nbKilometres}} kilometres</td>
             <td scope="row">{{outings[key].duree}} minutes</td>
             <td scope="row">{{outings[key].avis}}</td>
+            <td scope ="row"><button type="button" class="btn btn-danger" (click)="dropOuting(outings[key].id)">DO IT!</button></td>
             </tr>
 
         </tbody>

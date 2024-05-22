@@ -29,4 +29,7 @@ export class ApiService {
   getAllOutings():Observable<{[key:string]:Outing}>{
     return this.client.get<{[key:string]:Outing}>(this.url+"all");
   }
+  dropOuting(id:number):Observable<any>{
+    return this.client.delete(this.url+"drop/"+id.toString());
+  }
 }

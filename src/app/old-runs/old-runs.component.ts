@@ -1,5 +1,6 @@
 import { Component,OnInit } from '@angular/core';
 import {ApiService} from '../api.service';
+import { Observable } from 'rxjs';
 
 export interface Outing{
   id:number;
@@ -35,7 +36,27 @@ export class OldRunsComponent implements OnInit {
  
  }
 
+ dropOuting(id:number){
+
+  this.apiService.dropOuting(id).subscribe(
+    (response)=>{
+      this.outings = response;
+    },
+    (error)=>{
+      console.error('Error');
+    });
+    this.apiService.getAllOutings().subscribe(
+      (response)=>{
+        this.outings = response;
+      },
+      (error)=>{
+        console.error('Error');
+      }
+    );
+ }
  getKeys(obj:{[key:string]:any}):string[]{
   return Object.keys(obj);
  }
+
+
 }

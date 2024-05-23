@@ -41,18 +41,20 @@ export class OldRunsComponent implements OnInit {
   this.apiService.dropOuting(id).subscribe(
     (response)=>{
       this.outings = response;
+      this.apiService.getAllOutings().subscribe(
+        (response)=>{
+          this.outings = response;
+        },
+        (error)=>{
+          console.error('Error');
+        }
+      );
     },
     (error)=>{
       console.error('Error');
     });
-    this.apiService.getAllOutings().subscribe(
-      (response)=>{
-        this.outings = response;
-      },
-      (error)=>{
-        console.error('Error');
-      }
-    );
+
+    
  }
  getKeys(obj:{[key:string]:any}):string[]{
   return Object.keys(obj);

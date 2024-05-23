@@ -1,0 +1,18 @@
+<form [formGroup]="formData" (ngSubmit)="onSubmit()">
+   
+        <div class="row">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Date" id="date" formControlName="date">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Distance" id="nbKilometres" formControlName="nbKilometres">
+          </div>
+          <div class="col">
+            <input type="tet" class="form-control" placeholder="Durée"id="duree" formControlName="duree">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Avis" id="avis" formControlName="avis">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-dark">Send</button>
+</form>

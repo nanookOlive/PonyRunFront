@@ -9,6 +9,8 @@ import { OldRunsComponent } from './old-runs/old-runs.component';
 import { NewRunComponent } from './new-run/new-run.component';
 import {ApiService} from './api.service';
 import { FooterComponent } from './footer/footer.component';
+import { FormComponent } from './form/form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,6 +19,7 @@ import { FooterComponent } from './footer/footer.component';
     OldRunsComponent,
     NewRunComponent,
     FooterComponent,
+    FormComponent,
    
     
   ],
@@ -24,6 +27,7 @@ import { FooterComponent } from './footer/footer.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule
 
   ],
   providers: [],

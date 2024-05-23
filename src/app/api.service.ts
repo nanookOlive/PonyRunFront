@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders,HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 export interface Outing{
@@ -31,5 +31,15 @@ export class ApiService {
   }
   dropOuting(id:number):Observable<any>{
     return this.client.delete(this.url+"drop/"+id.toString());
+  }
+  submitOuting(data:any):Observable<any>{
+    const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    const body = new HttpParams()
+    .set('date', data.date)
+    .set('nbKilometres', data.nbKilometres)
+    .set('duree', data.duree)
+    .set('avis', data.avis);
+
+    return this.client.post(this.url+"create",body.toString(),{headers});
   }
 }
